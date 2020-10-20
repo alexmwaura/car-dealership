@@ -13,7 +13,7 @@ public class Vehicle {
         this.price = price;
     }
     public boolean worthBuying(int maxPrice){
-        return (price > maxPrice);
+        return (price <= maxPrice);
     }
     public int getPrice(){return price;}
     public int getYear(){return year;}
