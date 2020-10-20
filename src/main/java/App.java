@@ -48,7 +48,34 @@ public class App {
                         }
                    }
                 }
-
+                else if(navigationChoice.equals("Add Vehicle")) {
+                    System.out.println("Alright, let's add a vehicle! What year was this vehicle made?");
+                    int userVehicleYear = Integer.parseInt(bufferedReader.readLine());
+                    System.out.println("Great! What make or brand is the vehicle?");
+                    String userVehicleBrand = bufferedReader.readLine();
+                    System.out.println("Got it! What model is it?");
+                    String userVehicleModel = bufferedReader.readLine();
+                    System.out.println("And how many miles does it have on it?");
+                    int userVehicleMiles = Integer.parseInt(bufferedReader.readLine());
+                    System.out.println("Finally, what's its price?");
+                    int userVehiclePrice = Integer.parseInt(bufferedReader.readLine());
+                    Vehicle userVehicle = new Vehicle(userVehicleYear, userVehicleBrand, userVehicleModel, userVehicleMiles, userVehiclePrice);
+                    allVehicles.add(userVehicle);
+                    System.out.println("Alright, here's your new vehicle:");
+                    System.out.println("----------------------");
+                    System.out.println(userVehicle.getYear());
+                    System.out.println(userVehicle.getBrand());
+                    System.out.println(userVehicle.getModel());
+                    System.out.println(userVehicle.getMiles());
+                    System.out.println(userVehicle.getPrice());
+                }
+                else if(navigationChoice.equals("Exit")){
+                    System.out.println("Goodbye");
+                    programRunning = false;
+                }
+                else  {
+                    System.out.println("I'm sorry, we don't recognize your input");
+                }
             }
             catch (IOException e){
                 e.printStackTrace();
